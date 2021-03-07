@@ -110,11 +110,11 @@ def usage():
 
 
 def main(argv):
-    keywords = None
+    key = None
     usr = None
     pwd = None
-    send = None
-    receive = None
+    snd = None
+    rcv = None
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'k:u:p:s:r:h', ['key=', 'usr=', 'pwd=', 'snd=', 'rcv=', 'help'])
     except getopt.GetoptError:
@@ -125,7 +125,7 @@ def main(argv):
             usage()
             sys.exit()
         elif opt in ['-k', '--key']:
-            keywords = arg
+            key = arg
             pass
         elif opt in ['-u', '--usr']:
             usr = arg
@@ -134,10 +134,10 @@ def main(argv):
             pwd = arg
             pass
         elif opt in ['-s', '--snd']:
-            send = arg
+            snd = arg
             pass
         elif opt in ['-r', '--rcv']:
-            receive = arg
+            rcv = arg
             pass
         else:
             usage()
@@ -146,13 +146,13 @@ def main(argv):
         usr = '<username>'
     if pwd == None:
         pwd = '<password>'
-    if send == None:
-        send = '<mail sender address>'
-    if receive == None:
-        receive = ['<mail receiver address 1>','<mail receiver address 2>']
+    if snd == None:
+        snd = '<mail sender address>'
+    if rcv == None:
+        rcv = ['<mail receiver address 1>','<mail receiver address 2>']
     else:
-        receive = np.char.split(receive, sep=',').tolist()
-    send_mail(main_process(keywords), usr, pwd, send, receive)
+        rcv = np.char.split(rcv, sep=',').tolist()
+    send_mail(main_process(key), usr, pwd, snd, rcv)
 
 if __name__ == '__main__':
     main(sys.argv)
