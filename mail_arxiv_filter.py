@@ -102,7 +102,7 @@ def usage():
     print('>>> Usage')
     print('Use parameters or edit main code directly to define your mail server.')
     print('-h --help: <help>')
-    print('-k --keywords: <keywords> string A or "A,B,C"')
+    print('-k --keywords: <keywords> string A or A,B,C')
     print('-u --usr: <mail server username> string A\n-p --pwd: <mail server password> string A')
     print('-s --send: <mail sender address> string A')
     print('-r --receive: <mail receiver address> string A or "A,B,C"') 
