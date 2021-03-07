@@ -102,10 +102,10 @@ def usage():
     print('>>> Usage')
     print('Use parameters or edit main code directly to define your mail server.')
     print('-h --help: <help>')
-    print('-k --keywords: <keywords> string A or A,B,C')
+    print('-k --key: <keywords> string A or A,B,C')
     print('-u --usr: <mail server username> string A\n-p --pwd: <mail server password> string A')
-    print('-s --send: <mail sender address> string A')
-    print('-r --receive: <mail receiver address> string A or A,B,C') 
+    print('-s --snd: <mail sender address> string A')
+    print('-r --rcv: <mail receiver address> string A or A,B,C') 
     print('Example: -k Galaxy,AGN -u sdf -p 12345678 -s sdf@sdf.edu.cn -r sdf@sdf.edu.cn')
 
 
@@ -116,7 +116,7 @@ def main(argv):
     send = None
     receive = None
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'k:u:p:s:r:h', ['keywords=', 'usr=', 'pwd=', 'send=', 'receive=', 'help'])
+        opts, args = getopt.getopt(sys.argv[1:], 'k:u:p:s:r:h', ['key=', 'usr=', 'pwd=', 'snd=', 'rcv=', 'help'])
     except getopt.GetoptError:
         usage()
         sys.exit()
@@ -124,7 +124,7 @@ def main(argv):
         if opt in ['-h', '--help']:
             usage()
             sys.exit()
-        elif opt in ['-k', '--keywords']:
+        elif opt in ['-k', '--key']:
             keywords = arg
             pass
         elif opt in ['-u', '--usr']:
@@ -133,10 +133,10 @@ def main(argv):
         elif opt in ['-p', '--pwd']:
             pwd = arg
             pass
-        elif opt in ['-s', '--send']:
+        elif opt in ['-s', '--snd']:
             send = arg
             pass
-        elif opt in ['-r', '--receive']:
+        elif opt in ['-r', '--rcv']:
             receive = arg
             pass
         else:
