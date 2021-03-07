@@ -105,7 +105,7 @@ def usage():
     print('-k --keywords: <keywords> string A or A,B,C')
     print('-u --usr: <mail server username> string A\n-p --pwd: <mail server password> string A')
     print('-s --send: <mail sender address> string A')
-    print('-r --receive: <mail receiver address> string A or "A,B,C"') 
+    print('-r --receive: <mail receiver address> string A or A,B,C') 
     print('Example: -k Galaxy,AGN -u sdf -p 12345678 -s sdf@sdf.edu.cn -r sdf@sdf.edu.cn')
 
 
