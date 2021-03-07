@@ -152,8 +152,7 @@ def main(argv):
         receive = ['<mail receiver address 1>','<mail receiver address 2>']
     else:
         receive = np.char.split(receive, sep=',').tolist()
-    print(main_process(keywords))
-    #send_mail(main_process(keywords), usr, pwd, send, receive)
+    send_mail(main_process(keywords), usr, pwd, send, receive)
 
 if __name__ == '__main__':
     main(sys.argv)
